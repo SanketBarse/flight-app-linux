@@ -1,0 +1,7 @@
+.classpath
+target/
+.settings/
+.idea/
+test-output/
+target/
+.project
