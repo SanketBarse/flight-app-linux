@@ -21,11 +21,11 @@ public class FlightBookingTest extends AbstractTestPage{
 		rp.goTo("https://d1uh9e7cu07ukd.cloudfront.net/selenium-docker/reservation-app/index.html");
 		Assert.assertTrue(rp.isAt());
 		
-		rp.firstNameInput("sanket");
-		rp.lastNameInput("barse");
-		rp.emailInput("example.com");
-		rp.streetInput("1 Main Street");
-		rp.cityInput("new Delhi");
+		rp.firstNameInput(flightAppRegistrationData.firstName());
+		rp.lastNameInput(flightAppRegistrationData.lastName());
+		rp.emailInput(flightAppRegistrationData.email());
+		rp.streetInput(flightAppRegistrationData.street());
+		rp.cityInput(flightAppRegistrationData.city());
 		rp.clickRegisterButton();
 		
 	}
@@ -41,9 +41,9 @@ public class FlightBookingTest extends AbstractTestPage{
 	public void flightSearch() {
 		FlightSearchPage flightSearchPage = new FlightSearchPage(driver);
 		flightSearchPage.isAt();
-		flightSearchPage.selectPassenger();
-		flightSearchPage.selectdepartFrom();
-		flightSearchPage.selectarrivedIn();
+		flightSearchPage.selectPassenger(searchFlightData.noOfPassenger());
+		flightSearchPage.selectDepartFrom(searchFlightData.departFrom());
+		flightSearchPage.selectArrivedIn(searchFlightData.arrivedIn());
 		flightSearchPage.clickSearchButton();
 	}
 	

@@ -3,11 +3,11 @@ package com.flight.app.pages;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import commonClasses.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import com.flight.app.AbstractPage;
 
 public class SelectFlightPage extends AbstractPage {
 

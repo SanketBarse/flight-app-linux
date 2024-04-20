@@ -1,12 +1,12 @@
 package org.vendor.portal.pages;
 
+import commonClasses.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.vendor.portal.AbstractClass;
 
-public class LoginPage extends AbstractClass{
+public class LoginPage extends AbstractPage {
 
     public LoginPage(WebDriver driver){
         super(driver);
@@ -24,17 +24,17 @@ public class LoginPage extends AbstractClass{
     @FindBy(id = "login")
     private WebElement loginInput;
 
-    @override
+
     public boolean isAt(){
-        wait.until(ExpectedConditions.visibilityOf(userNameInput));
-        return userNameInput.isDisplayed();
+        wait.until(ExpectedConditions.visibilityOf(passwordInput));
+        return this.passwordInput.isDisplayed();
     }
 
-    public void setPassword(){
-        userNameInput.sendKeys("");
+    public void setPassword(String userName){
+        userNameInput.sendKeys(userName);
     }
-    public void setUserName(){
-        passwordInput.sendKeys("");
+    public void setUserName(String password){
+        passwordInput.sendKeys(password);
     }
 
     public void setCheckBox(){
@@ -43,6 +43,10 @@ public class LoginPage extends AbstractClass{
 
     public void clickLoginBtn(){
         loginInput.click();
+    }
+
+    public void goTo(String url){
+        driver.get(url);
     }
 
 
