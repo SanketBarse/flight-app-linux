@@ -1,9 +1,14 @@
 package com.flight.app.testclasses;
 
+import com.flight.app.model.FlightAppRegistrationData;
+import com.flight.app.model.SearchFlightData;
+import commonClasses.AbstractTestClass;
+import commonClasses.JsonUtil;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.flight.app.AbstractTestPage;
 import com.flight.app.pages.FlightConfimPage;
 import com.flight.app.pages.FlightSearchPage;
 import com.flight.app.pages.RegistrationConfirmationPage;
@@ -11,8 +16,16 @@ import com.flight.app.pages.RegistrationPage;
 import com.flight.app.pages.SelectFlightPage;
 
 
-public class FlightBookingTest extends AbstractTestPage{
+public class FlightBookingTest extends AbstractTestClass {
+	protected FlightAppRegistrationData flightAppRegistrationData;
+	protected SearchFlightData searchFlightData;
 
+	@BeforeTest
+	@Parameters({"RegistrationPath","searchFlightPath"})
+	public void setJSONData(String RegistrationPath, String searchFlightPath){
+		this.searchFlightData = JsonUtil.getTestData(searchFlightPath, SearchFlightData.class);
+		this.flightAppRegistrationData = JsonUtil.getTestData(RegistrationPath, FlightAppRegistrationData.class);
+	}
 	
 	@Test
 	public void registration(){

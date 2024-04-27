@@ -1,12 +1,23 @@
 package org.vendor.portal.testClasses;
 
+import commonClasses.AbstractTestClass;
+import commonClasses.JsonUtil;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.vendor.portal.AbstractTestClass;
+import org.vendor.portal.model.VendorPortalTestData;
 import org.vendor.portal.pages.DashboardPage;
 import org.vendor.portal.pages.LoginPage;
 
 public class VendorPortalTest extends AbstractTestClass {
+    protected VendorPortalTestData testData;
+
+    @BeforeTest
+    @Parameters("testData")
+    public void setJSONData(String testData){
+        this.testData = JsonUtil.getTestData(testData, VendorPortalTestData.class);
+    }
 
     @Test
     public void loginPageTest(){

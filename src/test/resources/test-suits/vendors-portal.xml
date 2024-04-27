@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" thread-count="4" parallel="tests">
 
     <test name="user-john">
-        <parameter name="testDataPath" value="Test-data//john.json"/>
+        <parameter name="testData" value="Test-data/Vendor-Portal-App/john.json"/>
 
         <classes>
             <class name="org.vendor.portal.testClasses.VendorPortalTest"/>
         </classes>
     </test>
     <test name="user-mike">
-        <parameter name="testDataPath" value="Test-data/mike.json"/>
+        <parameter name="testData" value="Test-data/Vendor-Portal-App/mike.json"/>
 
         <classes>
             <class name="org.vendor.portal.testClasses.VendorPortalTest"/>
         </classes>
     </test>
     <test name="user-sam">
-        <parameter name="testDataPath" value="Test-data/sam.json"/>
+        <parameter name="testData" value="Test-data/Vendor-Portal-App/sam.json"/>
         <classes>
             <class name="org.vendor.portal.testClasses.VendorPortalTest"/>
         </classes>
