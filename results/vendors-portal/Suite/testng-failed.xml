@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="4" parallel="tests" name="user-sam(failed)">
+    <parameter name="testData" value="Test-data/Vendor-Portal-App/sam.json"/>
+    <classes>
+      <class name="org.vendor.portal.testClasses.VendorPortalTest">
+        <methods>
+          <include name="dashboardPageTest"/>
+          <include name="loginPageTest"/>
+          <include name="init"/>
+          <include name="setDriver"/>
+          <include name="setJSONData"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- org.vendor.portal.testClasses.VendorPortalTest -->
+    </classes>
+  </test> <!-- user-sam(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-05T19:27:17 GMT" name="Suite" finished-at="2024-05-05T19:28:04 GMT" duration-ms="47021">
+    <groups>
+    </groups>
+    <test started-at="2024-05-05T19:27:17 GMT" name="user-sam" finished-at="2024-05-05T19:28:04 GMT" duration-ms="46768">
+      <class name="org.vendor.portal.testClasses.VendorPortalTest">
+        <test-method is-config="true" signature="init()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@2accdbb5]" started-at="2024-05-05T19:27:17 GMT" name="init" finished-at="2024-05-05T19:27:17 GMT" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@2accdbb5]" started-at="2024-05-05T19:27:17 GMT" name="setDriver" finished-at="2024-05-05T19:27:45 GMT" duration-ms="27866" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5a45133e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method is-config="true" signature="setJSONData(java.lang.String)[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@2accdbb5]" started-at="2024-05-05T19:27:45 GMT" name="setJSONData" finished-at="2024-05-05T19:27:48 GMT" depends-on-methods="commonClasses.AbstractTestClass.setDriver" duration-ms="3575" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test-data/Vendor-Portal-App/sam.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setJSONData -->
+        <test-method signature="loginPageTest()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@2accdbb5]" started-at="2024-05-05T19:27:49 GMT" name="loginPageTest" finished-at="2024-05-05T19:27:57 GMT" duration-ms="8533" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTest -->
+        <test-method signature="dashboardPageTest()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@2accdbb5]" started-at="2024-05-05T19:27:57 GMT" name="dashboardPageTest" finished-at="2024-05-05T19:28:03 GMT" depends-on-methods="org.vendor.portal.testClasses.VendorPortalTest.loginPageTest" duration-ms="5943" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dashboardPageTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@2accdbb5]" started-at="2024-05-05T19:28:03 GMT" name="tearDown" finished-at="2024-05-05T19:28:04 GMT" duration-ms="455" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.vendor.portal.testClasses.VendorPortalTest -->
+    </test> <!-- user-sam -->
+    <test started-at="2024-05-05T19:27:17 GMT" name="user-mike" finished-at="2024-05-05T19:28:04 GMT" duration-ms="47021">
+      <class name="org.vendor.portal.testClasses.VendorPortalTest">
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@cad498c]" started-at="2024-05-05T19:27:17 GMT" name="setDriver" finished-at="2024-05-05T19:27:45 GMT" duration-ms="27692" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@534a5a98]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method is-config="true" signature="setJSONData(java.lang.String)[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@cad498c]" started-at="2024-05-05T19:27:45 GMT" name="setJSONData" finished-at="2024-05-05T19:27:48 GMT" depends-on-methods="commonClasses.AbstractTestClass.setDriver" duration-ms="3741" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test-data/Vendor-Portal-App/mike.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setJSONData -->
+        <test-method signature="loginPageTest()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@cad498c]" started-at="2024-05-05T19:27:49 GMT" name="loginPageTest" finished-at="2024-05-05T19:27:57 GMT" duration-ms="8673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTest -->
+        <test-method signature="dashboardPageTest()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@cad498c]" started-at="2024-05-05T19:27:57 GMT" name="dashboardPageTest" finished-at="2024-05-05T19:28:04 GMT" depends-on-methods="org.vendor.portal.testClasses.VendorPortalTest.loginPageTest" duration-ms="6239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dashboardPageTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.vendor.portal.testClasses.VendorPortalTest@cad498c]" started-at="2024-05-05T19:28:04 GMT" name="tearDown" finished-at="2024-05-05T19:28:04 GMT" duration-ms="303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.vendor.portal.testClasses.VendorPortalTest -->
+    </test> <!-- user-mike -->
+  </suite> <!-- Suite -->
+</testng-results>

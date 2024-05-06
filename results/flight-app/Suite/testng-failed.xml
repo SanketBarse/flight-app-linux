@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="RegistrationPath" value="Test-data/Flight-App/registration-data.json"/>
+    <parameter name="searchFlightPath" value="Test-data/Flight-App/flight-search-data.json"/>
+    <classes>
+      <class name="com.flight.app.testclasses.FlightBookingTest">
+        <methods>
+          <include name="init"/>
+          <include name="setDriver"/>
+          <include name="setJSONData"/>
+          <include name="registration"/>
+          <include name="flightSearch"/>
+          <include name="confirmFlight"/>
+          <include name="registrationConfirmation"/>
+          <include name="tearDown"/>
+          <include name="selectFlight"/>
+        </methods>
+      </class> <!-- com.flight.app.testclasses.FlightBookingTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

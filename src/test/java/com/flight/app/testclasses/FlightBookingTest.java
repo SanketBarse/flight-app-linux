@@ -74,6 +74,7 @@ public class FlightBookingTest extends AbstractTestClass {
 		FlightConfimPage flightConfirmPage = new FlightConfimPage(driver);
 		flightConfirmPage.isAt();
 		flightConfirmPage.getPrice();
+		Assert.assertTrue(false);
 	}
 	
 }

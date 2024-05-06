@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-05T19:27:17 GMT" name="Suite" finished-at="2024-05-05T19:28:22 GMT" duration-ms="65147">
+    <groups>
+    </groups>
+    <test started-at="2024-05-05T19:27:17 GMT" name="Test" finished-at="2024-05-05T19:28:22 GMT" duration-ms="65147">
+      <class name="com.flight.app.testclasses.FlightBookingTest">
+        <test-method is-config="true" signature="init()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:27:17 GMT" name="init" finished-at="2024-05-05T19:27:17 GMT" duration-ms="111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:27:17 GMT" name="setDriver" finished-at="2024-05-05T19:28:00 GMT" duration-ms="42599" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@112d1c8e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method is-config="true" signature="setJSONData(java.lang.String,java.lang.String)[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:00 GMT" name="setJSONData" finished-at="2024-05-05T19:28:01 GMT" depends-on-methods="commonClasses.AbstractTestClass.setDriver" duration-ms="1671" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test-data/Flight-App/registration-data.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test-data/Flight-App/flight-search-data.json]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setJSONData -->
+        <test-method signature="registration()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:01 GMT" name="registration" finished-at="2024-05-05T19:28:10 GMT" duration-ms="8363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registration -->
+        <test-method signature="registrationConfirmation()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:10 GMT" name="registrationConfirmation" finished-at="2024-05-05T19:28:12 GMT" depends-on-methods="com.flight.app.testclasses.FlightBookingTest.registration" duration-ms="2404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationConfirmation -->
+        <test-method signature="flightSearch()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:12 GMT" name="flightSearch" finished-at="2024-05-05T19:28:17 GMT" depends-on-methods="com.flight.app.testclasses.FlightBookingTest.registrationConfirmation" duration-ms="4376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightSearch -->
+        <test-method signature="selectFlight()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:17 GMT" name="selectFlight" finished-at="2024-05-05T19:28:19 GMT" depends-on-methods="com.flight.app.testclasses.FlightBookingTest.flightSearch" duration-ms="2193" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectFlight -->
+        <test-method signature="confirmFlight()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:19 GMT" name="confirmFlight" finished-at="2024-05-05T19:28:21 GMT" depends-on-methods="com.flight.app.testclasses.FlightBookingTest.selectFlight" duration-ms="1821" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at com.flight.app.testclasses.FlightBookingTest.confirmFlight(FlightBookingTest.java:77)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.TestNG.privateMain(TestNG.java:1430)
+at org.testng.TestNG.main(TestNG.java:1394)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmFlight -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.flight.app.testclasses.FlightBookingTest@e1de817]" started-at="2024-05-05T19:28:21 GMT" name="tearDown" finished-at="2024-05-05T19:28:22 GMT" duration-ms="1433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.flight.app.testclasses.FlightBookingTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
