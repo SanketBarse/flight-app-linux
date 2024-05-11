@@ -5,9 +5,9 @@ pipeline {
         stage('packaging') {
             agent {
                 docker {
-                    image 'maven:ibmjava'
-                    args '-u root -v ${pwd}/tmp/m2:/root/.m2'
-                }
+                                    image 'maven:3.9.3-eclipse-temurin-17-focal'
+                                    args '-u root -v /tmp/m2:/root/.m2'
+                                }
             }
             steps {
                 sh "mvn clean package -DskipTests"
