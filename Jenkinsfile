@@ -37,7 +37,7 @@ pipeline {
     }
 
     post {
-        finally {
+        always {
             bat "docker logout"
         }
     }
