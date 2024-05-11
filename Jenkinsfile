@@ -17,7 +17,9 @@ pipeline{
         }
 
         stage('pushing-docker-image'){
-            bat "docker push sanket0414/selenium-docker-integration"
+            steps{
+                bat "docker push sanket0414/selenium-docker-integration"
+            }
         }
     }
 
