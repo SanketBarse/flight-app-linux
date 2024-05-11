@@ -25,8 +25,10 @@ pipeline {
 
         stage('pushing-docker-image') {
             steps {
-                docker.withRegistry('', 'DOCKER_HUB_CRED') {
+                script{
+                    docker.withRegistry('', 'DOCKER_HUB_CRED') {
                     app.push('latest')
+                    }
                 }
             }
         }
