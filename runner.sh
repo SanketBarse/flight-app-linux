@@ -21,8 +21,6 @@ count=0
 while [ "$( curl -s http://${HUB_HOST}:4444/status | jq -r .value.ready )" != "true" ]
 
 do
-  echo  "$( curl http://${HUB_HOST}:4444/status | jq -r .value.ready)"
-  echo "http://${HUB_HOST}:4444/status"
   count=$((count+1))
   echo "Attempt: ${count}"
   if [ "$count" -ge 30 ]

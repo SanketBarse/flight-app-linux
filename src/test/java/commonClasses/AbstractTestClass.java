@@ -24,12 +24,6 @@ import java.util.Properties;
 public class AbstractTestClass {
 
     protected WebDriver driver;
-
-
-    private Properties prop;
-    private File file;
-    private FileInputStream inputStream;
-    private String browser;
     private Capabilities capabilities;
 
     @BeforeSuite

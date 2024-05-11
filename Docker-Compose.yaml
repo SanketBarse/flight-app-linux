@@ -12,6 +12,7 @@ services:
     image: selenium/node-chrome:124.0
     depends_on:
       - hub
+    shm_size: '2g'
     environment:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -24,6 +25,7 @@ services:
     image: selenium/node-firefox:125.0
     depends_on:
       - hub
+    shm_size: '2g'
     environment:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
