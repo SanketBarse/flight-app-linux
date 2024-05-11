@@ -1,43 +1,44 @@
-pipeline{
-
+pipeline {
     agent none
 
-    stages{
+    environment {
+        DOCKER_IMAGE = 'maven:3-eclipse-temurin-21-alpine'
+        DOCKER_HUB_CRED = credentials('DOCKER_HUB_CRED')
+        DOCKER_HUB_USR = DOCKER_HUB_CRED_USR
+        DOCKER_HUB_PSW = DOCKER_HUB_CRED_PSW
+    }
 
-        stage('packaging'){
-            agent{
-                docker{
-                    image 'maven:3-eclipse-temurin-21-alpine'
+    stages {
+        stage('packaging') {
+            agent {
+                docker {
+                    image DOCKER_IMAGE
                     args '-u root -v /tmp/m2:/root/.m2'
                 }
             }
-            steps{
-
+            steps {
                 sh "mvn clean package -DskipTests"
             }
         }
 
-        stage('building-docker-image'){
-            steps{
-                bat "docker build -t=sanket0414/selenium-docker-integration ."
+        stage('building-docker-image') {
+            steps {
+                bat "docker build -t sanket0414/selenium-docker-integration ."
             }
         }
 
-        stage('pushing-docker-image'){
-            environment{
-                DOCKER_HUB = credentials("DOCKER_HUB_CRED")
-            }
-            steps{
-                bat 'docker login -u ${DOCKER_HUB_USR}" -p ${DOCKER_HUB_PSW'
-                bat "docker push sanket0414/selenium-docker-integration"
+        stage('pushing-docker-image') {
+            steps {
+                docker.withRegistry('', DOCKER_HUB_CRED) {
+                    docker.image('sanket0414/selenium-docker-integration').push()
+                }
             }
         }
     }
 
-    post{
-        always {
+    post {
+        finally {
             bat "docker logout"
         }
     }
-
 }
