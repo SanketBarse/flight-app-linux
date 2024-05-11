@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('packaging') {
 //             agent {
@@ -30,7 +30,6 @@ pipeline {
                 }
             }
         }
-    }
 
     post {
         always {
