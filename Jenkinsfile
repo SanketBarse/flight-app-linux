@@ -1,13 +1,12 @@
 pipeline {
     agent none
 
-
     stages {
         stage('packaging') {
             agent {
                 docker {
-                    image 'maven:3-eclipse-temurin-21-alpine'
-                    args '-u root -v /tmp/m2:/root/.m2'
+                    image 'maven:ibmjava'
+                    args '-u root -v ${pwd}/tmp/m2:/root/.m2'
                 }
             }
             steps {
