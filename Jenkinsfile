@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.9.3-eclipse-temurin-17-focal'
-                    args '-u root -v /tmp/m2:/root/.m2'
+                    args '-u root -v /tmp/m2:/root/.m2 -w ${WORKSPACE}'
                 }
             }
             steps {
@@ -16,7 +16,7 @@ pipeline {
         stage('building-docker-image') {
             steps {
                 script{
-                    app = docker.build('sanket0414/selenium-docker-integration')
+                    app = docker.build('sanket0414/selenium-docker-integration' , "-f ${WORKSPACE}/Dockerfile .")
                 }
             }
         }
