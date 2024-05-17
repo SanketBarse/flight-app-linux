@@ -5,7 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.9.6-sapmachine-21'
-                    args '-u root -v /tmp/m2:/root/.m2'
+                    args '-u root -v /tmp/m2:/root/.m2 -w /workspace'
                 }
             }
             steps {
