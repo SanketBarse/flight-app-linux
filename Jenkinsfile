@@ -4,7 +4,7 @@ pipeline {
         stage('packaging') {
             agent {
                 docker {
-                    image 'sanket0414/maven:3.9.6-sapmachine-21'
+                    image 'sanket0414/maven'
                     args '-u root -v /tmp/m2:/root/.m2 /workspace'
                 }
             }
