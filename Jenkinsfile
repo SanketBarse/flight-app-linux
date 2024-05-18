@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('packaging') {
             steps {
-                sh "mvn clean package -DskipTests"
+                bat "mvn clean package -DskipTests"
             }
         }
 
