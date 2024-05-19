@@ -1,9 +1,17 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('packaging') {
+
+            agent{
+                docker{
+                    image 'maven:3.9.6-sapmachine-21'
+                    args '-v /root/.m2:/root/.m2'
+                }
+            }
+
             steps {
-                bat "mvn clean package -DskipTests"
+                sh "mvn clean package -DskipTests"
             }
         }
 
@@ -19,7 +27,7 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DOCKER_HUB_CRED') {
-                    app.push('latest')
+                    app.push('linux')
                     }
                 }
             }
