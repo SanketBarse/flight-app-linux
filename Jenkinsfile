@@ -18,7 +18,7 @@ pipeline {
         stage('building-docker-image'){
             steps {
                 script{
-                    app = docker.build('sanket0414/selenium-docker-integration' , "-f ${pwd}/Dockerfile .")
+                    app = docker.build('sanket0414/selenium-docker-integration' , "-f ${pwd}/workspace/docker-selenium/Dockerfile .")
                 }
             }
         }
