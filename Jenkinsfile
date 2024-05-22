@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('packaging') {
 
@@ -15,10 +15,10 @@ pipeline {
             }
         }
 
-        stage('building-docker-image') {
+        stage('building-docker-image'){
             steps {
                 script{
-                    app = docker.build('sanket0414/selenium-docker-integration' , "-f ${WORKSPACE}/Dockerfile .")
+                    app = docker.build('sanket0414/selenium-docker-integration' , "-f ${pwd}/Dockerfile .")
                 }
             }
         }
